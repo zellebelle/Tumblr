@@ -9,4 +9,6 @@
 
 @interface PhotosViewController : UIViewController
 
+@property (strong, nonatomic) NSArray *posts;
+
 @end
