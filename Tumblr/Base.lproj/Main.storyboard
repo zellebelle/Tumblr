@@ -13,7 +13,7 @@
         <!--PhotosViewController-->
         <scene sceneID="CLe-tj-bZf">
             <objects>
-                <viewController title="PhotosViewController" id="EeY-Hj-l1e" customClass="PhotosViewController" customModule="Tumblr" sceneMemberID="viewController">
+                <viewController title="PhotosViewController" id="EeY-Hj-l1e" customClass="PhotosViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hz3-BH-6tI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -23,19 +23,29 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="141" id="YXF-Qz-3KS" customClass="PhotoCell">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PhotoCell" rowHeight="141" id="YXF-Qz-3KS" customClass="PhotoCell">
                                         <rect key="frame" x="0.0" y="28" width="375" height="141"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YXF-Qz-3KS" id="pA3-bW-04r">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="140.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SxW-eQ-Agb">
-                                                    <rect key="frame" x="7" y="2" width="360" height="128"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SxW-eQ-Agb">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="141"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="141" id="Em1-69-le7"/>
+                                                        <constraint firstAttribute="height" constant="141" id="OB2-b7-cbh"/>
+                                                    </constraints>
                                                 </imageView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="SxW-eQ-Agb" firstAttribute="top" secondItem="pA3-bW-04r" secondAttribute="top" id="cab-A8-WEb"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <constraints>
+                                            <constraint firstItem="SxW-eQ-Agb" firstAttribute="leading" secondItem="YXF-Qz-3KS" secondAttribute="leading" id="ECJ-gU-FV0"/>
+                                            <constraint firstAttribute="trailing" secondItem="SxW-eQ-Agb" secondAttribute="trailing" id="TwM-sG-pt8"/>
+                                        </constraints>
                                         <connections>
                                             <outlet property="photoCell" destination="SxW-eQ-Agb" id="hr3-4y-cB9"/>
                                         </connections>

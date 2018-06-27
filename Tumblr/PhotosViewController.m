@@ -43,8 +43,10 @@
             NSDictionary *responseDictionary = dataDictionary[@"response"];
             // Store the returned array of dictionaries in our posts property
             self.posts = responseDictionary[@"posts"];
-        
-
+            NSLog(@"%@", self.posts);
+            self.tableView.reloadData;
+            self.tableView.rowHeight = 200;
+    
         }
     }];
     [task resume];
@@ -92,6 +94,10 @@
     }
     
      return nil;
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.posts.count;
 }
 
 
