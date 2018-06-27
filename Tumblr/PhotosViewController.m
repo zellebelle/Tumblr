@@ -45,7 +45,7 @@
             self.posts = responseDictionary[@"posts"];
             NSLog(@"%@", self.posts);
             self.tableView.reloadData;
-            self.tableView.rowHeight = 200;
+            self.tableView.rowHeight = 240;
     
         }
     }];
@@ -68,6 +68,8 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
